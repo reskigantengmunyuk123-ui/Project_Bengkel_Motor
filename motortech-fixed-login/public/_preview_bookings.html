@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0C0F">
+<title>MOTORTECH Workspace | bookings</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin-site">
+<div class="admin-shell">
+  <header class="admin-mobilebar">
+    <a class="brand" href="index.php?page=dashboard">
+      <span class="brand-mark"><svg viewBox="0 0 56 48" aria-hidden="true"><circle cx="28" cy="24" r="21"/><path d="M14 28 L22 13 L29 24 L38 10 L44 28 L35 36 L21 36 Z"/></svg></span>
+      <span class="brand-text">MOTOR<span class="red">TECH</span></span>
+    </a>
+    <button class="admin-menu-btn" type="button" id="adminMenuToggle" aria-controls="adminSidebar" aria-expanded="false" aria-label="Buka menu workspace">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <aside class="sidebar" id="adminSidebar">
+    <a class="brand sidebar-brand" href="index.php?page=dashboard">
+      <span class="brand-mark"><svg viewBox="0 0 56 48" aria-hidden="true"><circle cx="28" cy="24" r="21"/><path d="M14 28 L22 13 L29 24 L38 10 L44 28 L35 36 L21 36 Z"/></svg></span>
+      <span class="brand-text">MOTOR<span class="red">TECH</span><small>MECHANICAL ENGINEERING</small></span>
+    </a>
+    <div class="side-sep"></div>
+    <nav class="sidebar-nav">
+              <a class="" href="index.php?page=dashboard"><span class="dot"></span>Dashboard</a>
+              <a class="" href="index.php?page=queue"><span class="dot"></span>Antrean</a>
+              <a class="active" href="index.php?page=bookings"><span class="dot"></span>Booking</a>
+              <a class="" href="index.php?page=customers"><span class="dot"></span>Pelanggan</a>
+              <a class="" href="index.php?page=services"><span class="dot"></span>Layanan</a>
+              <a class="" href="index.php?page=spareparts"><span class="dot"></span>Stok Sparepart</a>
+              <a class="" href="index.php?page=transactions"><span class="dot"></span>Transaksi</a>
+              <a class="" href="index.php?page=history"><span class="dot"></span>Riwayat Servis</a>
+              <a class="" href="index.php?page=reports"><span class="dot"></span>Laporan</a>
+              <a class="" href="index.php?page=settings"><span class="dot"></span>Pengaturan</a>
+          </nav>
+    <div class="side-bottom">
+      <div class="side-sep"></div>
+      <div class="user-chip"><b>Test Mechanic</b><small>Administrator</small></div>
+      <a class="side-link" href="index.php" target="_blank" rel="noopener">↗ Lihat Website</a>
+      <a class="side-link side-logout" href="index.php?page=logout">↪ Keluar</a>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <main class="admin-main">
+    <header class="admin-top">
+      <div>
+        <h1>Manajemen Booking</h1>
+        <p>Kelola permintaan booking, jadwal, dan konfirmasi pelanggan.</p>
+      </div>
+      <span class="date-pill">06 Nov 2026</span>
+    </header>
+    <div class="admin-toolbar">
+  <p class="muted">Kelola permintaan booking, jadwal, dan konfirmasi pelanggan.</p>
+  <a class="btn btn-red" href="index.php?page=booking" target="_blank" rel="noopener">Tambah Booking</a>
+</div>
+
+<section class="card table-card">
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Kode Booking</th><th>Pelanggan</th><th>Jadwal</th><th>Layanan</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+                              <tr>
+              <td class="cell-strong">MT-261106-001</td>
+              <td>Destian</td>
+              <td>06 Nov • 09.00</td>
+              <td>Servis Rutin</td>
+              <td>
+                <form method="post" action="index.php?page=bookings" class="inline-form">
+                  <input type="hidden" name="booking_id" value="17">
+                  <select name="status" class="status-select is-waiting" onchange="this.form.submit()">
+                                          <option value="Menunggu" selected>Menunggu</option>
+                                          <option value="Diproses" >Dikerjakan</option>
+                                          <option value="Selesai" >Selesai</option>
+                                          <option value="Dibatalkan" >Dibatalkan</option>
+                                      </select>
+                </form>
+              </td>
+            </tr>
+                        </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card flow-card">
+  <h2>Alur Booking</h2>
+  <p class="muted">Booking masuk → Admin konfirmasi → Jadwal tersimpan → Pelanggan menerima kode booking.</p>
+</section>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
